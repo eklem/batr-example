@@ -10,7 +10,7 @@ export default [
   {
     input: './index.js',
     output: [
-      { name: 'sw', file: pkg.browser, format: 'umd' }
+      { name: 'math', file: pkg.browser, format: 'umd' }
     ],
     plugins: [
       resolve(), // so Rollup can find `ms`
