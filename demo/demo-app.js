@@ -11,8 +11,8 @@ document.getElementById('secondNumber').onchange = function () {
 
 const process = function () {
   const mathProcess = document.getElementById('mathselector').value
-  const firstNumber = parseInt(document.getElementById('firstNumber').value)
-  const secondNumber = parseInt(document.getElementById('secondNumber').value)
+  const firstNumber = Number(document.getElementById('firstNumber').value)
+  const secondNumber = Number(document.getElementById('secondNumber').value)
   let result
 
   switch (mathProcess) {
@@ -31,6 +31,5 @@ const process = function () {
     default:
       console.log('No calculation done')
   }
-  console.log(result)
   document.getElementById('resultNumber').innerText = result
 }
