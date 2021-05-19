@@ -1,2 +1,2 @@
-# batr-test
-Test repository for batr - Bundle And Test and Repeat.
+# batr-example
+Example / yest repository for batr - Bundle And Test and Repeat.
