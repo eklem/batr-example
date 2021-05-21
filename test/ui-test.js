@@ -130,13 +130,13 @@ test('Divide number 4 by 7', pageMacro, async (t, page) => {
   await page.goto(url)
 
   // Click input[type="number"]
-  await page.click('input[type="number"]')
+  await page.click('#firstNumber')
 
   // Fill input[type="number"]
-  await page.fill('input[type="number"]', '4')
+  await page.fill('#firstNumber', '4')
 
   // Press Tab
-  await page.press('input[type="number"]', 'Tab')
+  await page.press('#firstNumber', 'Tab')
 
   // Press Tab
   await page.press('select[name="calculation"]', 'Tab')
