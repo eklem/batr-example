@@ -4,7 +4,7 @@
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.math = {}));
 }(this, (function (exports) { 'use strict';
 
-  var batrExample = {};
+  var src = {};
 
   const add = function (a, b) {
     return a + b
@@ -22,13 +22,13 @@
     return a / b
   };
 
-  var add_1 = batrExample.add = add;
-  var subtract_1 = batrExample.subtract = subtract;
-  var multiply_1 = batrExample.multiply = multiply;
-  var divide_1 = batrExample.divide = divide;
+  var add_1 = src.add = add;
+  var subtract_1 = src.subtract = subtract;
+  var multiply_1 = src.multiply = multiply;
+  var divide_1 = src.divide = divide;
 
   exports.add = add_1;
-  exports.default = batrExample;
+  exports.default = src;
   exports.divide = divide_1;
   exports.multiply = multiply_1;
   exports.subtract = subtract_1;

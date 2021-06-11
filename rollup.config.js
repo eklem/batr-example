@@ -8,7 +8,7 @@ import pkg from './package.json'
 export default [
   // browser-friendly UMD build
   {
-    input: './index.js',
+    input: './src/index.js',
     output: [
       { name: 'math', file: pkg.browser, format: 'umd' }
     ],
@@ -28,8 +28,9 @@ export default [
 
   // *** This needs to be stopword.js and not vandelay-industries.js ***
   {
-    input: './index.js',
+    input: './src/index.js',
     output: [
+      { file: pkg.main, format: 'cjs' },
       { file: pkg.module, format: 'es' }
     ],
     plugins: [

@@ -1,3 +1,7 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var src = {};
 
 const add = function (a, b) {
@@ -21,5 +25,8 @@ var subtract_1 = src.subtract = subtract;
 var multiply_1 = src.multiply = multiply;
 var divide_1 = src.divide = divide;
 
-export default src;
-export { add_1 as add, divide_1 as divide, multiply_1 as multiply, subtract_1 as subtract };
+exports.add = add_1;
+exports.default = src;
+exports.divide = divide_1;
+exports.multiply = multiply_1;
+exports.subtract = subtract_1;

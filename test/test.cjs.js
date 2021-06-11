@@ -1,5 +1,5 @@
 const test = require('ava')
-const math = require('../index.js')
+const math = require('../dist/batr-example.cjs.js')
 
 test('addition a + b', (t) => {
   const expected = 31
