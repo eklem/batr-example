@@ -10,7 +10,7 @@ export default [
   {
     input: './src/index.js',
     output: [
-      { name: 'math', file: pkg.browser, format: 'umd' }
+      { name: 'math', file: pkg.browser, format: 'umd', exports: 'named' }
     ],
     plugins: [
       resolve(), // so Rollup can find `ms`
@@ -25,13 +25,11 @@ export default [
   // builds from a single configuration where possible, using
   // an array for the `output` option, where we can specify
   // `file` and `format` for each target)
-
-  // *** This needs to be stopword.js and not vandelay-industries.js ***
   {
     input: './src/index.js',
     output: [
-      { file: pkg.main, format: 'cjs' },
-      { file: pkg.module, format: 'es' }
+      { name: 'math', file: pkg.main, format: 'cjs', exports: 'named' },
+      { name: 'math', file: pkg.module, format: 'es', exports: 'named' }
     ],
     plugins: [
       resolve(), // so Rollup can find `ms`
