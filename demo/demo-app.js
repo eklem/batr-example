@@ -17,16 +17,16 @@ const process = function () {
 
   switch (mathProcess) {
     case 'add':
-      result = math.add(firstNumber, secondNumber)
+      result = window.math.add(firstNumber, secondNumber)
       break
     case 'subtract':
-      result = math.subtract(firstNumber, secondNumber)
+      result = window.math.subtract(firstNumber, secondNumber)
       break
     case 'multiply':
-      result = math.multiply(firstNumber, secondNumber)
+      result = window.math.multiply(firstNumber, secondNumber)
       break
     case 'divide':
-      result = math.divide(firstNumber, secondNumber)
+      result = window.math.divide(firstNumber, secondNumber)
       break
     default:
       console.log('No calculation done')
