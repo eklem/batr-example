@@ -1,6 +1,6 @@
 {
   "name": "batr-example",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Example / Test repository for batr - Bundle And Test and Repeat. ",
   "main": "./dist/batr-example.cjs.js",
   "module": "./dist/batr-example.esm.mjs",
@@ -14,7 +14,7 @@
     "url": "git+https://github.com/eklem/batr-example.git"
   },
   "devDependencies": {
-    "batr": "^1.0.1"
+    "batr": "^1.0.2"
   },
   "keywords": [
     "bundle",
