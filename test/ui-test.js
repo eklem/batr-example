@@ -1,7 +1,7 @@
 const { chromium } = require('playwright')
 const test = require('ava')
 const browserPromise = chromium.launch({
-  headless: false
+  headless: true
   // slowMo: 500
 })
 
