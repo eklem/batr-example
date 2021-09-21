@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/eklem/batr-example/issues"
   },
-  "homepage": "https://github.com/eklem/batr-example#readme"
+  "homepage": "https://github.com/eklem/batr-example#readme",
+  "directories": {
+    "test": "test"
+  }
 }
