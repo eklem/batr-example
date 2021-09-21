@@ -43,7 +43,7 @@ test('Add numbers 4 and 7', pageMacro, async (t, page) => {
   await page.press('#secondNumber', 'Shift+Tab')
 
   // screenshot, 1st task
-  await page.screenshot({ path: 'screenshot-01.png' })
+  await page.screenshot({ path: './screenshots/screenshot-01.png' })
 
   // Click text=11
   t.deepEqual(await page.textContent('#result span'), '11')
@@ -79,7 +79,7 @@ test('Subtract number 7 from 4', pageMacro, async (t, page) => {
   await page.selectOption('select[name="calculation"]', 'subtract')
 
   // screenshot, 2nd task
-  await page.screenshot({ path: 'screenshot-02.png' })
+  await page.screenshot({ path: './screenshots/screenshot-02.png' })
 
   // Click text=-3
   t.deepEqual(await page.textContent('#result span'), '-3')
@@ -115,7 +115,7 @@ test('Multiply numbers 4 and 7', pageMacro, async (t, page) => {
   await page.selectOption('select[name="calculation"]', 'multiply')
 
   // screenshot, 3rd task
-  await page.screenshot({ path: 'screenshot-03.png' })
+  await page.screenshot({ path: './screenshots/screenshot-03.png' })
 
   // Click text=28
   t.deepEqual(await page.textContent('#result span'), '28')
@@ -151,7 +151,7 @@ test('Divide number 4 by 7', pageMacro, async (t, page) => {
   await page.selectOption('select[name="calculation"]', 'divide')
 
   // screenshot, 4th task
-  await page.screenshot({ path: 'screenshot-04.png' })
+  await page.screenshot({ path: './screenshots/screenshot-04.png' })
 
   // Click text=0.5714285714285714
   t.deepEqual(await page.textContent('#result span'), '0.5714285714285714')
