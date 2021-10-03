@@ -26,7 +26,7 @@ var multiply_1 = src.multiply = multiply;
 var divide_1 = src.divide = divide;
 
 exports.add = add_1;
-exports['default'] = src;
+exports["default"] = src;
 exports.divide = divide_1;
 exports.multiply = multiply_1;
 exports.subtract = subtract_1;

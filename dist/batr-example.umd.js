@@ -2,7 +2,7 @@
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.math = {}));
-}(this, (function (exports) { 'use strict';
+})(this, (function (exports) { 'use strict';
 
   var src = {};
 
@@ -28,11 +28,11 @@
   var divide_1 = src.divide = divide;
 
   exports.add = add_1;
-  exports['default'] = src;
+  exports["default"] = src;
   exports.divide = divide_1;
   exports.multiply = multiply_1;
   exports.subtract = subtract_1;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 
-})));
+}));
