@@ -1,6 +1,6 @@
 {
   "name": "batr-example",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "Example / Test repository for batr - Bundle And Test and Repeat. ",
   "main": "./dist/batr-example.cjs.js",
   "module": "./dist/batr-example.esm.mjs",
