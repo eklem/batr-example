@@ -2,7 +2,7 @@ const { chromium } = require('playwright')
 const test = require('ava')
 const browserPromise = chromium.launch({
   headless: true
-  // slowMo: 500
+  // slowMo: 350
 })
 
 const path = require('path')
@@ -17,27 +17,27 @@ async function pageMacro (t, callback) {
   }
 }
 
-test('Add numbers 4 and 7', pageMacro, async (t, page) => {
+test('Add numbers 4 and 7, subtract 7 from 4, multiply 4 and finally divide 4 by 7', pageMacro, async (t, page) => {
+  // t.plan(4)
   const filePath = await path.resolve('./demo/index.html')
   const url = 'file://' + filePath
 
   // Go to ./index.html
   await page.goto(url)
 
-  // Click input[type="number"]
-  await page.click('input[type="number"]')
+  // Click first number input field and delete
+  await page.click('#firstNumber')
+  await page.keyboard.press('Backspace')
 
-  // Fill input[type="number"]
-  await page.fill('input[type="number"]', '4')
+  // Type number
+  await page.keyboard.type('4')
 
-  // Press Tab
-  await page.press('input[type="number"]', 'Tab')
-
-  // Press Tab
-  await page.press('select[name="calculation"]', 'Tab')
+  // Press Tab twice to get to next number
+  await page.keyboard.press('Tab')
+  await page.keyboard.press('Tab')
 
   // Fill #secondNumber
-  await page.fill('#secondNumber', '7')
+  await page.keyboard.type('7')
 
   // Press Tab with modifiers
   await page.press('#secondNumber', 'Shift+Tab')
@@ -45,35 +45,8 @@ test('Add numbers 4 and 7', pageMacro, async (t, page) => {
   // screenshot, 1st task
   await page.screenshot({ path: './screenshots/screenshot-01.png' })
 
-  // Click text=11
+  // Test that 4 + 7 gives 11
   t.deepEqual(await page.textContent('#result span'), '11')
-  // await page.click('text=11')
-})
-
-test('Subtract number 7 from 4', pageMacro, async (t, page) => {
-  const filePath = await path.resolve('./demo/index.html')
-  const url = 'file://' + filePath
-
-  // Go to ./index.html
-  await page.goto(url)
-
-  // Click input[type="number"]
-  await page.click('input[type="number"]')
-
-  // Fill input[type="number"]
-  await page.fill('input[type="number"]', '4')
-
-  // Press Tab
-  await page.press('input[type="number"]', 'Tab')
-
-  // Press Tab
-  await page.press('select[name="calculation"]', 'Tab')
-
-  // Fill #secondNumber
-  await page.fill('#secondNumber', '7')
-
-  // Press Tab with modifiers
-  await page.press('#secondNumber', 'Shift+Tab')
 
   // Select subtract
   await page.selectOption('select[name="calculation"]', 'subtract')
@@ -81,35 +54,8 @@ test('Subtract number 7 from 4', pageMacro, async (t, page) => {
   // screenshot, 2nd task
   await page.screenshot({ path: './screenshots/screenshot-02.png' })
 
-  // Click text=-3
+  // Test that 4 - 7 gives -3
   t.deepEqual(await page.textContent('#result span'), '-3')
-  // await page.click('text=-3')
-})
-
-test('Multiply numbers 4 and 7', pageMacro, async (t, page) => {
-  const filePath = await path.resolve('./demo/index.html')
-  const url = 'file://' + filePath
-
-  // Go to ./index.html
-  await page.goto(url)
-
-  // Click input[type="number"]
-  await page.click('input[type="number"]')
-
-  // Fill input[type="number"]
-  await page.fill('input[type="number"]', '4')
-
-  // Press Tab
-  await page.press('input[type="number"]', 'Tab')
-
-  // Press Tab
-  await page.press('select[name="calculation"]', 'Tab')
-
-  // Fill #secondNumber
-  await page.fill('#secondNumber', '7')
-
-  // Press Tab with modifiers
-  await page.press('#secondNumber', 'Shift+Tab')
 
   // Select multiply
   await page.selectOption('select[name="calculation"]', 'multiply')
@@ -117,35 +63,8 @@ test('Multiply numbers 4 and 7', pageMacro, async (t, page) => {
   // screenshot, 3rd task
   await page.screenshot({ path: './screenshots/screenshot-03.png' })
 
-  // Click text=28
+  // Test that 3 * 11 gives 28
   t.deepEqual(await page.textContent('#result span'), '28')
-  // await page.click('text=28')
-})
-
-test('Divide number 4 by 7', pageMacro, async (t, page) => {
-  const filePath = await path.resolve('./demo/index.html')
-  const url = 'file://' + filePath
-
-  // Go to ./index.html
-  await page.goto(url)
-
-  // Click input[type="number"]
-  await page.click('#firstNumber')
-
-  // Fill input[type="number"]
-  await page.fill('#firstNumber', '4')
-
-  // Press Tab
-  await page.press('#firstNumber', 'Tab')
-
-  // Press Tab
-  await page.press('select[name="calculation"]', 'Tab')
-
-  // Fill #secondNumber
-  await page.fill('#secondNumber', '7')
-
-  // Press Tab with modifiers
-  await page.press('#secondNumber', 'Shift+Tab')
 
   // Select divide
   await page.selectOption('select[name="calculation"]', 'divide')
@@ -153,7 +72,6 @@ test('Divide number 4 by 7', pageMacro, async (t, page) => {
   // screenshot, 4th task
   await page.screenshot({ path: './screenshots/screenshot-04.png' })
 
-  // Click text=0.5714285714285714
+  // Test that 4 / 7 gives 0.5714285714285714
   t.deepEqual(await page.textContent('#result span'), '0.5714285714285714')
-  // await page.click('text=0.5714285714285714')
 })
