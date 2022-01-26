@@ -14,7 +14,4 @@ const divide = function (a, b) {
   return a / b
 }
 
-exports.add = add
-exports.subtract = subtract
-exports.multiply = multiply
-exports.divide = divide
+export { add, subtract, multiply, divide }
