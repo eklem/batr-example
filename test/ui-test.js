@@ -19,7 +19,7 @@ async function pageMacro (t, callback) {
 
 test('Add numbers 4 and 7, subtract 7 from 4, multiply 4 and finally divide 4 by 7', pageMacro, async (t, page) => {
   // t.plan(4)
-  const filePath = await path.resolve('./demo/index.html')
+  const filePath = await path.resolve(__dirname, '../demo/index.html')
   const url = 'file://' + filePath
 
   // Go to ./index.html
